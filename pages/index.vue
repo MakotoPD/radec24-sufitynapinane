@@ -65,6 +65,48 @@
                 </div>
             </div>
         </div>
+
+        <div class="my-12">
+            <h1 class="text-gray-800 text-4xl font-bold text-center leading-snug mb-8">
+                Opinie <span class="roboto podkreslenie">klientów</span> <br/>
+            </h1>
+            <Swpier-review />
+        </div>
+
+
+        <div class="my-12">
+            <h1 class="text-gray-800 text-4xl font-bold text-center leading-snug mb-8">
+                <span class="roboto podkreslenie">Skontaktuj</span> się z <br/> nami
+            </h1>
+
+            <div class="flex flex-col items-center gap-5">
+                <div class="bg-white border w-fit rounded-xl py-2 px-4 flex items-center gap-4 justify-center">
+                    <div class="p-2 bg-whitered rounded-lg">
+                        <img src="/icons/phone.svg" alt="x">
+                    </div>
+                    <a class="text-xl text-red-500 font-semibold" href="tel:737444950">737 444 950</a>
+                </div>
+                <div class="bg-white border w-fit rounded-xl py-2 px-4 flex items-center gap-4 justify-center">
+                    <div class="p-2 bg-whitered rounded-lg">
+                        <img src="/icons/envelope.svg" alt="x">
+                    </div>
+                    <a class="text-xl text-red-500 font-semibold" href="mailto:radec24@wp.pl">radec24@wp.pl</a>
+                </div>
+                <div class="bg-white border w-fit rounded-xl py-2 px-4 flex items-center gap-4 justify-center">
+                    <div class="p-2 bg-whitered rounded-lg">
+                        <img src="/icons/house.svg" alt="x">
+                    </div>
+                    <div>
+                        <p class="text-xl text-red-500 font-semibold">Ludzisko 56</p>
+                        <p class="text-xl text-red-500 font-semibold">88-160 Janikowo</p>
+                    </div>
+
+                </div>
+            </div>
+            
+        </div>
+
+       
     </div>
 </template>
 
