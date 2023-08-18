@@ -37,9 +37,6 @@ export default defineNuxtConfig({
 					href: '/favicon.ico'
 				},
 			],
-      script: [
-        { src: "https://unpkg.com/@phosphor-icons/web" }
-      ]
     },
   },
 
