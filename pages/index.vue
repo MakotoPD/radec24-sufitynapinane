@@ -1,10 +1,69 @@
 <template>
-    <div>
-        <div class="h-screen w-screen flex items-center justify-center">
-            <p>test poppins</p> <h1 class="text-6xl font-black">Idealny Sufit w Jeden dzień</h1>
+    <div class="py-12 px-3">
+        <div class="mb-24">
+            <div class="mb-4">
+                <div class="rounded-full flex gap-3 bg-whitered w-fit pr-4 overflow-hidden">
+                    <div class="pl-4 pr-3 bg-red-600 flex justify-center items-center">
+                        <img class="animate-[wiggle_.4s_ease-in-out_infinite]" src="/icons/bell-ringing.svg" alt="bell">
+                    </div>
+                    <div class="py-1">
+                        <p class="roboto font-bold">Bądź szybszy niż sąsiad</p>
+                    </div>
+                </div>
+            </div>
+            <div class="pl-4 mb-36">
+                <h1 class="font-bold text-6xl text-gray-800">Idealny <br/>
+                    <span class="roboto text-red-500">Sufit</span> w 
+                    <br/> Jeden dzień
+                </h1>
+            </div>
+            <div class="px-9 relative">
+                <img class="absolute left-1/2 -top-6 -translate-y-1/2" src="/icons/arrow-spin.png" alt="arrow">
+                <div class="absolute left-0 bg-white rounded-xl shadow-xl py-4 px-8 w-fit text-center">
+                    <div class="absolute -right-2 -top-2 p-1 rounded-full bg-red-500">
+                        <img src="/icons/star.svg" alt="">
+                    </div>
+                    <p class="text-gray-800 font-bold text-xl">Wysoka <br/> jakość</p>
+                </div>
+                <img class="w-full max-w-xl" src="/img/sufit.png" alt="">
+            </div>
         </div>
-        <div class="h-screen w-screen flex items-center justify-center">
-            <p>test2</p>
+
+        <div class="my-12">
+            <h1 class="text-gray-800 text-4xl font-bold text-center leading-snug mb-8">
+                Jakie <span class="roboto podkreslenie">możliwości</span> <br/>
+                daje sufit napinany?
+            </h1>
+
+            <div class="px-8 flex flex-col gap-6">
+                <div class="rounded-xl bg-white py-4 px-4 w-fit border">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-1 bg-whitered rounded-lg">
+                            <img src="/icons/paint-roller.svg" alt="x">
+                        </div>
+                        <p class="font-semibold">Możliwości aranżacyjne</p>
+                    </div>
+                    <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, modi enim reprehenderit nobis sapiente distinctio dignissimos praesentium consequatur porro omnis corporis nihil fugit eos voluptatem consectetur accusamus dolorem optio libero.</p>
+                </div>
+                <div class="rounded-xl bg-white py-4 px-4 w-fit border">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-1 bg-whitered rounded-lg">
+                            <img src="/icons/feather.svg" alt="x">
+                        </div>
+                        <p class="font-semibold">Lekka i cienka konstrukcja</p>
+                    </div>
+                    <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, modi enim reprehenderit nobis sapiente distinctio dignissimos praesentium consequatur porro omnis corporis nihil fugit eos voluptatem consectetur accusamus dolorem optio libero.</p>
+                </div>
+                <div class="rounded-xl bg-white py-4 px-4 w-fit border">
+                    <div class="flex items-center gap-4 mb-6">
+                        <div class="p-1 bg-whitered rounded-lg">
+                            <img src="/icons/waves.svg" alt="x">
+                        </div>
+                        <p class="font-semibold">Maskowanie nierówności</p>
+                    </div>
+                    <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, modi enim reprehenderit nobis sapiente distinctio dignissimos praesentium consequatur porro omnis corporis nihil fugit eos voluptatem consectetur accusamus dolorem optio libero.</p>
+                </div>
+            </div>
         </div>
     </div>
 </template>

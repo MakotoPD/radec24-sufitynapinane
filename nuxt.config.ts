@@ -58,8 +58,12 @@ export default defineNuxtConfig({
   googleFonts: {
 		display: 'swap',
 		families: {
-			Poppins: true,
-      Roboto: true,
+			Poppins: {
+				wght: [300, 400, 500, 600, 700, 800, 900],
+			},
+      		Roboto: {
+				wght: [300, 400, 500, 600, 700, 800, 900],
+			},
 		},
 	},
 

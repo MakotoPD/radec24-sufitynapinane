@@ -2,9 +2,20 @@ import type { Config } from 'tailwindcss'
 
 export default <Partial<Config>>{
 	theme: {
+		extend: {
+			keyframes: {
+			  	wiggle: {
+					'0%, 100%': { transform: 'rotate(-5deg)' },
+					'50%': { transform: 'rotate(10deg)' },
+			  	}
+			},
+			animation: {
+				wiggle: 'wiggle .4s ease-in-out infinite',
+			}
+		},
 		colors: {
 			'whitered': '#FEF2F2',
-			'light': 'FAFAFA',
+			'light': '#FAFAFA',
 			inherit: "inherit",
 			current: "currentColor",
 			transparent: "transparent",
@@ -288,5 +299,5 @@ export default <Partial<Config>>{
 		'Error.{js,ts,vue}',
 		'error.{js,ts,vue}',
 		'content/**/*.md'
-	  ]
+	]
   }
