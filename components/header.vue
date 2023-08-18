@@ -17,18 +17,18 @@
         <div class="fixed bottom-8 w-full px-4">
             <div class="w-full py-3 px-4 bg-neutral-200/60 backdrop-blur-sm rounded-3xl flex justify-center gap-12">
                 <NuxtLink to="/realizacje" class="px-1 py-1 bg-red-300/50 rounded-xl">
-                    <ph-phone :size="36" color="#f95555" weight="duotone" />
+                    <img src="/icons/phone.svg"/>
                 </NuxtLink>
                 <NuxtLink to="/" class="px-1 py-1 bg-red-300/50 rounded-xl">
-                    <ph-house :size="36" color="#f95555" weight="duotone" />
+                    <img src="/icons/house.svg"/>
                 </NuxtLink>
                 <NuxtLink to="/kontakt" class="px-1 py-1 bg-red-300/50 rounded-xl">
-                    <ph-images :size="36" color="#f95555" weight="duotone" />
+                    <img src="/icons/images.svg"/>
                 </NuxtLink>
             </div>
         </div>
     </div>
 </template>
 <script setup lang="ts">
-import { PhHouse, PhImages, PhPhone } from "@phosphor-icons/vue";
+
 </script>
