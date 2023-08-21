@@ -1,5 +1,6 @@
 <template>
     <swiper 
+    :slidesPerView="'auto'"
     :scrollbar="{
       hide: true,
     }"

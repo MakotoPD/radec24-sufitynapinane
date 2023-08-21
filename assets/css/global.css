@@ -36,6 +36,12 @@ h1{
   background-size: contain;
 }
 
+@media (min-width: 768px) {
+  .podkreslenie::after{
+    height: 15px;
+  }
+}
+
 body{
 	background-color: #FAFAFA;
   	position: relative;
