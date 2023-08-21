@@ -11,7 +11,8 @@
   "devDependencies": {
     "@nuxt/devtools": "^0.8.0",
     "@types/node": "^18.17.3",
-    "nuxt": "^3.6.5"
+    "nuxt": "^3.6.5",
+    "nuxt-gtag": "^0.6.1"
   },
   "dependencies": {
     "@nuxt/image-edge": "^1.0.0-rc.1-28205905.cb96767",
@@ -21,7 +22,6 @@
     "@phosphor-icons/vue": "^2.1.6",
     "aos": "^2.3.4",
     "medium-zoom": "^1.0.8",
-    "nuxt-gtag": "^0.6.1",
     "sitemap": "^7.1.1",
     "swiper": "^10.2.0"
   }

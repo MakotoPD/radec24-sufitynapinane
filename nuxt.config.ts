@@ -47,6 +47,7 @@ export default defineNuxtConfig({
 		'nuxt-gtag',             	//gtag google analytics
 		'@nuxtjs/google-fonts',   	//google fonts
 		'~/modules/sitemap',		//sitemap
+		'nuxt-gtag'					//google analytics
   	],
 
 
@@ -73,6 +74,10 @@ export default defineNuxtConfig({
 				wght: [300, 400, 500, 600, 700, 800, 900],
 			},
 		},
+	},
+
+	gtag: {
+		id: 'G-E0WG7DX403'
 	},
 
 	runtimeConfig: {
