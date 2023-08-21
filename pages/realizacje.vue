@@ -12,7 +12,7 @@
                     <p class="text-4xl font-semibold text-gray-800 my-2 px-4">{{ post.tytul }}</p>
                     <p v-html="post.opis" class="text-gray-700 mb-6 px-4" />
                     <div class="flex flex-wrap justify-center gap-6">
-                        <img class="max-w-sm max-h-[17rem] rounded-xl image-zoomable" v-for="img in post.zdjecia" :src="img.url" alt="photo">
+                        <nuxt-img class="max-w-sm max-h-[17rem] rounded-xl image-zoomable" v-for="img in post.zdjecia" :src="img.url" loading="lazy" alt="photo" />
                     </div>
                 </div>
             </div>
