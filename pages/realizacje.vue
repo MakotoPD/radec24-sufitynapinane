@@ -9,10 +9,10 @@
             <div v-else>
                 <div v-for="post in realizacje">
                     <hr class="mt-6 mb-4">
-                    <p class="text-4xl font-semibold text-gray-800 my-2">{{ post.tytul }}</p>
-                    <p v-html="post.opis" class="text-gray-700 mb-6"></p>
+                    <p class="text-4xl font-semibold text-gray-800 my-2 px-4">{{ post.tytul }}</p>
+                    <p v-html="post.opis" class="text-gray-700 mb-6 px-4" />
                     <div class="flex flex-wrap justify-center gap-6">
-                        <img class="max-w-sm rounded-xl image-zoomable" v-for="img in post.zdjecia" :src="img.url" alt="photo">
+                        <img class="max-w-sm max-h-[17rem] rounded-xl image-zoomable" v-for="img in post.zdjecia" :src="img.url" alt="photo">
                     </div>
                 </div>
             </div>
@@ -32,7 +32,7 @@ const runtimeConfig = useRuntimeConfig();
 
 const QUERY = `
     query {
-        allRealizacjes {
+        allRealizacjes(orderBy: _updatedAt_DESC) {
             id
             tytul
             opis
@@ -46,7 +46,7 @@ const QUERY = `
 const { data, error } = await useFetch('https://graphql.datocms.com', {
   method: 'POST',
   headers: {
-    Authorization: `Bearer ${runtimeConfig.public.datoCmsToken}`,
+    Authorization: `Bearer 6708543f748bf169511ca9ad1c38f4`,
   },
   body: {
     query: QUERY,
@@ -58,10 +58,6 @@ const { data, error } = await useFetch('https://graphql.datocms.com', {
    },
 });
 
-
-
 let realizacje = data.value.allRealizacjes
-
-console.log(realizacje)
 
 </script>

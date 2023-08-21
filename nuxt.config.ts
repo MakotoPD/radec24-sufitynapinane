@@ -74,8 +74,13 @@ export default defineNuxtConfig({
 		}
 	  },
 
-  css: [
+  	css: [
 		'@/assets/css/global.css',
-	]
+	],
+
+	routeRules:{
+		'/': { ssr: false, prerender: true },
+		'/realizacje': { ssr: true, isr: true }
+	}
 
 })
