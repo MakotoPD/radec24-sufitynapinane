@@ -12,13 +12,20 @@
                     <p class="text-4xl font-semibold text-gray-800 my-2">{{ post.tytul }}</p>
                     <p v-html="post.opis" class="text-gray-700 mb-6"></p>
                     <div class="flex flex-wrap justify-center gap-6">
-                        <img class="max-w-sm rounded-xl" v-for="img in post.zdjecia" :src="img.url" alt="photo">
+                        <img class="max-w-sm rounded-xl image-zoomable" v-for="img in post.zdjecia" :src="img.url" alt="photo">
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </template>
+
+<style>
+
+.medium-zoom-image--opened{
+    border-radius: 0% !important;
+}
+</style>
 
 <script setup lang="ts">
 const runtimeConfig = useRuntimeConfig();
