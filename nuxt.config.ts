@@ -42,11 +42,18 @@ export default defineNuxtConfig({
   },
 
   modules: [
-    '@nuxtjs/tailwindcss',    //css framework
-		'@nuxt/image-edge',       //images
-		'nuxt-gtag',              //gtag google analytics
-		'@nuxtjs/google-fonts',   //google fonts
-  ],
+    '@nuxtjs/tailwindcss',    		//css framework
+		'@nuxt/image-edge',       	//images
+		'nuxt-gtag',             	//gtag google analytics
+		'@nuxtjs/google-fonts',   	//google fonts
+		'~/modules/sitemap',		//sitemap
+  	],
+
+
+  	sitemap: {
+		hostname: 'https://sufitynapinane.radec24.pl',
+	},
+	
 
   plugins: [
     { src: "@/plugins/aos", ssr: false, mode: "client" }
