@@ -35,7 +35,7 @@ const runtimeConfig = useRuntimeConfig();
 
 const QUERY = `
     query {
-        allRealizacjes(orderBy: _updatedAt_DESC) {
+        allRealizacjes {
             id
             tytul
             opis
