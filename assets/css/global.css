@@ -38,7 +38,7 @@ h1{
 
 @media (min-width: 768px) {
   .podkreslenie::after{
-    height: 15px;
+    height: 20px;
   }
 }
 

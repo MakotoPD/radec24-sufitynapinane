@@ -6,7 +6,7 @@
     }"
     :modules="modules" 
     class="mySwiper">
-      <swiper-slide class="px-8" >
+      <swiper-slide class="px-8 md:max-w-sm" >
         <div class="bg-white rounded-lg border py-6 px-3">
             <div class="flex justify-between items-center mb-4">
                 <div class="flex gap-2 bg-green-300/30 py-1 px-2 rounded-lg text-green-800 font-semibold text-xs w-fit">
@@ -33,7 +33,7 @@
         </div>
       </swiper-slide>
 
-      <swiper-slide class="px-8" >
+      <swiper-slide class="px-8 md:max-w-sm" >
         <div class="bg-white rounded-lg border py-6 px-3">
             <div class="flex justify-between items-center mb-4">
                 <div class="flex gap-2 bg-green-300/30 py-1 px-2 rounded-lg text-green-800 font-semibold text-xs w-fit">
@@ -60,7 +60,7 @@
         </div>
       </swiper-slide>
 
-      <swiper-slide class="px-8" >
+      <swiper-slide class="px-8 md:max-w-sm" >
         <div class="bg-white rounded-lg border py-6 px-3">
             <div class="flex justify-between items-center mb-4">
                 <div class="flex gap-2 bg-green-300/30 py-1 px-2 rounded-lg text-green-800 font-semibold text-xs w-fit">

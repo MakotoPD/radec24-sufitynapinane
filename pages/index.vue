@@ -103,10 +103,10 @@
                     <div class="p-2 bg-whitered rounded-lg">
                         <img src="/icons/house.svg" alt="x">
                     </div>
-                    <div>
+                    <a href="https://www.google.com/maps/place/RADEC24+sufity+napinane,+wyko%C5%84czenia+wn%C4%99trz,+Inowroc%C5%82aw/@52.7947042,18.2821023,17z/data=!3m1!4b1!4m6!3m5!1s0x470350898bd704dd:0xe8d349a8766307bf!8m2!3d52.794701!4d18.2846772!16s%2Fg%2F11bx8kgsb1?entry=ttu" target="_blank">
                         <p class="text-xl text-red-500 font-semibold">Ludzisko 56</p>
                         <p class="text-xl text-red-500 font-semibold">88-160 Janikowo</p>
-                    </div>
+                    </a>
 
                 </div>
             </div>
