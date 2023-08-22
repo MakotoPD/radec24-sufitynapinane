@@ -26,11 +26,14 @@
             
             <div class="md:w-full px-9 relative">
                 <img class="absolute left-1/2 -top-6 -translate-y-1/2 md:-left-12 md:-bottom-0 md:top-auto md:translate-y-0 md:-translate-x-full md:-scale-x-100 md:-rotate-90" src="/icons/arrow-spin.png" alt="arrow">
-                <div class="absolute left-0 bg-white rounded-xl shadow-xl py-4 px-8 w-fit text-center">
-                    <div class="absolute -right-2 -top-2 p-1 rounded-full bg-red-500">
-                        <img src="/icons/star.svg" alt="">
+                <div class="absolute left-0">
+                    <div class="relative bg-white rounded-xl shadow-xl py-4 px-8 w-fit text-center">
+                        <div class="absolute -right-2 -top-2 p-1 rounded-full bg-red-500">
+                            <img src="/icons/star.svg" alt="">
+                        </div>
+                        <p class="text-gray-800 font-bold text-xl">Wysoka <br/> jakość</p>
                     </div>
-                    <p class="text-gray-800 font-bold text-xl">Wysoka <br/> jakość</p>
+                    
                 </div>
                 <nuxt-img class="w-full max-w-xl md:max-w-md" loading="lazy" format="webp" src="/img/sufit.png" alt="x" />
             </div>
@@ -68,7 +71,7 @@
                         </div>
                         <p class="font-semibold">Maskowanie nierówności</p>
                     </div>
-                    <p class="text-sm">Sufit napinany umożliwia ukrycie popękanych starych tynków, nierównych stropów i nieestetycznych rur instalacyjnych, co poprawia wygląd wnętrza. Dzięki swojej funkcjonalności i estetyce, sufit napinany jest doskonałym rozwiązaniem do różnorodnych przestrzeni mieszkalnych i komercyjnych</p>
+                    <p class="text-sm">Sufity napinane oferują możliwość maskowania zniszczonych starych tynków oraz nierówności w stropach, przyczyniając się do poprawy walorów estetycznych wnętrza. Ich atrakcyjny wygląd sprawia, że stanowią doskonałą propozycję zarówno dla przestrzeni mieszkalnych, jak i komercyjnych, dodając im niebanalnego uroku i elegancji.</p>
                 </div>
             </div>
         </div>

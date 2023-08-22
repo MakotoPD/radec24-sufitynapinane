@@ -6,15 +6,20 @@
                     <nuxt-img src="/img/logo.png" alt="RADEC24" class="h-5" />
                 </NuxtLink>
             </div>
-            <div class="hidden md:block desktopmenu absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+            <div class="z-50 hidden md:block desktopmenu absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
                 <div class="flex gap-5 justify-center items-center">
                     <NuxtLink to="/" class="hover:text-red-600 duration-150">Start</NuxtLink>
                     <NuxtLink to="/realizacje" class="hover:text-red-600 duration-150">Realizacje</NuxtLink>
                     <a href="/#kontakt" class="hover:text-red-600 duration-150">Kontakt</a>
                     <div class="relative" @mouseenter="mouseover()" @mouseleave="mouseleave()">
                         <p class="cursor-default flex items-center">O sufitach <img class="arrow-down duration-150" src="/icons/caret-down.svg" alt="\/"></p>
-                        <div class="niema hidden druation-150 bg-white absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-full w-[16rem] py-4 px-4 rounded-lg">
+                        <div class="niema hidden absolute left-1/2 bottom-0 -translate-x-1/2 translate-y-full">
+                           <div class="relative shadow-md druation-150 border bg-white w-[16rem] py-4 px-4 rounded-lg">
                             <NuxtLink to="/czym-jest-sufit" class="hover:text-red-600 duration-150" >Czym jest sufit napinany?</NuxtLink>
+                            <hr class="my-3"/>
+                            <NuxtLink to="/konserwacja" class="hover:text-red-600 duration-150" >Konserwacja</NuxtLink>
+                           </div>
+                           
                         </div>
                     </div>
                     
@@ -40,7 +45,7 @@
                
             </div>
             <div class="oSufitach hidden absolute -top-2 right-3 -translate-y-full ">
-                    <div class="relative px-8 py-4 border bg-neutral-200/60 backdrop-blur-sm rounded-3xl ">
+                    <div class="relative px-8 py-4 border bg-neutral-200/60 backdrop-blur-sm rounded-3xl">
                         <NuxtLink to="/czym-jest-sufit" @click="opensumbenuMobile()" class="text-red-500/90 font-semibold duration-150" >Czym jest sufit napinany?</NuxtLink>
                         <hr class="border-red-500/50 my-3"/>
                         <NuxtLink to="/konserwacja" @click="opensumbenuMobile()" class="text-red-500/90 font-semibold duration-150" >Konserwacja</NuxtLink>
