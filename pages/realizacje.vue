@@ -15,7 +15,13 @@
                     <p class="text-4xl font-semibold text-gray-800 my-2 px-4">{{ post.tytul }}</p>
                     <p v-html="post.opis" class="text-gray-700 mb-6 px-4" />
                     <div class="flex flex-wrap justify-center gap-6">
-                        <nuxt-img quality="10" class="max-w-sm max-h-[17rem] rounded-xl image-zoomable" v-for="img in post.zdjecia" :src="img.url" loading="lazy" alt="photo" />
+                        <div v-for="img in post.zdjecia" class="max-w-sm max-h-[17rem] overflow-hidden relative block">
+                            <div aria-hidden="true" class="blur-div" :style="'background-image: url('+img.responsiveImage.base64+');'+'background-size: cover; opacity: 1; transition: opacity 500ms ease 500ms; width: 110%; height: 110%;'">
+                                <img class="duration-150 rounded-xl image-zoomable" :src="img.responsiveImage.src" :srcSet="img.responsiveImage.srcSet" :sizes="img.responsiveImage.sizes" loading="lazy" alt="photo"/>
+                            </div>
+                        </div>
+                        
+
                     </div>
                 </div>
             </div>
@@ -40,7 +46,18 @@ const QUERY = `
             tytul
             opis
             zdjecia {
-                url
+                responsiveImage(imgixParams: {auto: format}) {
+                    srcSet
+                    webpSrcSet
+                    sizes
+                    src
+                    width
+                    height
+                    aspectRatio
+                    alt
+                    title
+                    base64
+                }
             }
         }
     }
@@ -49,7 +66,7 @@ const QUERY = `
 const { data, error, pending } = await useFetch('https://graphql.datocms.com', {
   method: 'POST',
   headers: {
-    Authorization: `Bearer 6708543f748bf169511ca9ad1c38f4`,
+    Authorization: `Bearer ${runtimeConfig.public.datoCmsToken}`,
   },
   body: {
     query: QUERY,
@@ -63,4 +80,36 @@ const { data, error, pending } = await useFetch('https://graphql.datocms.com', {
 
 let realizacje = data.value.allRealizacjes
 
+
+onMounted(() => {
+
+    let blurDivs = document.querySelectorAll('.blur-div');
+
+    blurDivs.forEach( div => {
+        const img = div.querySelector('img');
+
+
+        function loaded() {
+            div.classList.add('loaded')
+        }
+
+        if (img?.complete) {
+            loaded()
+        } else {
+            img?.addEventListener("load", loaded)
+        }
+    })
+})
 </script>
+
+<style>
+.blur-div.loaded > img{
+    opacity: 1;
+    transition: opacity .5s ease-in-out;
+}
+
+.blur-div > img {
+    opacity: 0;
+    transition: opacity .5s ease-in-out !important;
+} 
+</style>
