@@ -47,24 +47,24 @@ export default defineNuxtConfig({
 		'nuxt-gtag',             	//gtag google analytics
 		'@nuxtjs/google-fonts',   	//google fonts
 		'~/modules/sitemap',		//sitemap
-		'nuxt-gtag'					//google analytics
+		'nuxt-gtag',				//google analytics
   	],
 
 
   	sitemap: {
 		hostname: 'https://sufitynapinane.radec24.pl',
 	},
-	
 
-  plugins: [
-    { src: "@/plugins/aos", ssr: false, mode: "client" }
-  ],
 
-  tailwindcss: {
+  	plugins: [
+    	{ src: "@/plugins/aos", ssr: false, mode: "client" }
+  	],
+
+  	tailwindcss: {
 		configPath: 'tailwind.config',
 	},
 
-  googleFonts: {
+  	googleFonts: {
 		display: 'swap',
 		families: {
 			Poppins: {

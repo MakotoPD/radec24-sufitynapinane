@@ -50,7 +50,7 @@
                         </div>
                         <p class="font-semibold">Możliwości aranżacyjne</p>
                     </div>
-                    <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, modi enim reprehenderit nobis sapiente distinctio dignissimos praesentium consequatur porro omnis corporis nihil fugit eos voluptatem consectetur accusamus dolorem optio libero.</p>
+                    <p class="text-sm">Istnieje wiele rodzajów sufitów napinanych. Od klasycznych połyskowych, przez matowe i satynowe po wielopoziomowe lub z nadrukiem. A jeśli chcesz zrobić impreze możesz również mieć sufit, który w świeci po przez zamontowanie ledów nad sufitem!</p>
                 </div>
                 <div class="rounded-xl bg-white py-4 px-4 w-fit border md:max-w-sm">
                     <div class="flex items-center gap-4 mb-6">
@@ -59,7 +59,7 @@
                         </div>
                         <p class="font-semibold">Lekka i cienka konstrukcja</p>
                     </div>
-                    <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, modi enim reprehenderit nobis sapiente distinctio dignissimos praesentium consequatur porro omnis corporis nihil fugit eos voluptatem consectetur accusamus dolorem optio libero.</p>
+                    <p class="text-sm">Sufit napinany składa się z profili wokół sufity, a pomiędzy nimi rozciągnięta jest membrana zrobiona z gumowej folii. Sufit napinany możezostać zamontowany nawet i 3 cm pod aktualnym sufitem. Pomimo tak lekkiej konstrukcji sufit jest odporny na uderenia (np. z korka od szampana)</p>
                 </div>
                 <div class="rounded-xl bg-white py-4 px-4 w-fit border md:max-w-sm">
                     <div class="flex items-center gap-4 mb-6">
@@ -68,7 +68,7 @@
                         </div>
                         <p class="font-semibold">Maskowanie nierówności</p>
                     </div>
-                    <p class="text-sm">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Cupiditate, modi enim reprehenderit nobis sapiente distinctio dignissimos praesentium consequatur porro omnis corporis nihil fugit eos voluptatem consectetur accusamus dolorem optio libero.</p>
+                    <p class="text-sm">Sufit napinany umożliwia ukrycie popękanych starych tynków, nierównych stropów i nieestetycznych rur instalacyjnych, co poprawia wygląd wnętrza. Dzięki swojej funkcjonalności i estetyce, sufit napinany jest doskonałym rozwiązaniem do różnorodnych przestrzeni mieszkalnych i komercyjnych</p>
                 </div>
             </div>
         </div>
