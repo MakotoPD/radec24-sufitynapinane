@@ -31,27 +31,26 @@
             
             <div class="relative border w-full py-3 px-4 bg-neutral-200/60 backdrop-blur-sm rounded-3xl flex justify-center gap-12">
                 <NuxtLink to="/#kontakt" class="px-1 py-1 bg-red-300/50 rounded-xl focus:scale-125 duration-150">
-                    <img src="/icons/phone.svg"/>
+                    <img src="/icons/phone.svg" alt="x"/>
                 </NuxtLink>
                 <NuxtLink to="/" class="px-1 py-1 bg-red-300/50 rounded-xl focus:scale-125 duration-150">
-                    <img src="/icons/house.svg"/>
+                    <img src="/icons/house.svg" alt="x"/>
                 </NuxtLink>
                 <a href="/realizacje" class="px-1 py-1 bg-red-300/50 rounded-xl focus:scale-125 duration-150">
-                    <img src="/icons/images.svg"/>
+                    <img src="/icons/images.svg" alt="x"/>
                 </a>
                 <button @click="opensumbenuMobile()" class="px-1 py-1 bg-red-300/50 rounded-xl focus:scale-125 duration-150">
-                    <img src="/icons/waves.svg"/>
+                    <img src="/icons/waves.svg" alt="x"/>
                 </button>
                
             </div>
             <div class="oSufitach hidden absolute -top-2 right-3 -translate-y-full ">
-                    <div class="relative px-8 py-4 border bg-neutral-200/60 backdrop-blur-sm rounded-3xl">
-                        <NuxtLink to="/czym-jest-sufit" @click="opensumbenuMobile()" class="text-red-500/90 font-semibold duration-150" >Czym jest sufit napinany?</NuxtLink>
-                        <hr class="border-red-500/50 my-3"/>
-                        <NuxtLink to="/konserwacja" @click="opensumbenuMobile()" class="text-red-500/90 font-semibold duration-150" >Konserwacja</NuxtLink>
-                    </div>
-
+                <div class="relative px-8 py-4 border bg-neutral-200/60 backdrop-blur-sm rounded-3xl">
+                    <NuxtLink to="/czym-jest-sufit" @click="opensumbenuMobile()" class="text-red-500/90 font-semibold duration-150" >Czym jest sufit napinany?</NuxtLink>
+                    <hr class="border-red-500/50 my-3"/>
+                    <NuxtLink to="/konserwacja" @click="opensumbenuMobile()" class="text-red-500/90 font-semibold duration-150" >Konserwacja</NuxtLink>
                 </div>
+            </div>
         </div>
     </div>
 </template>
