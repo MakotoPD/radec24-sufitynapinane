@@ -3,7 +3,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-			title: 'Sufity napinane - Radec24',
+			title: 'Sufity napinane - Radec24 | Sufity napinane inowrcoław kujawsko-pomorskie',
 			htmlAttrs: {
 				lang: 'pl',
 			},
@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 				},
 				{
 					name: 'description',
-					content: 'Sufity napinane - RADEC24'
+					content: 'Radec 24 - Jesteśmy wiodącym i wykonawcą profesjonalnych rozwiązań sufitów napinanych, które dodają nie tylko uroku, ale także funkcjonalności Twoim przestrzeniom. Nasza firma specjalizuje się w montażu sufitów napinanych o najwyższej jakości, spełniających najbardziej wymagające standardy estetyczne i techniczne.'
 				},
 				{
 					name: 'keywords',
@@ -29,7 +29,15 @@ export default defineNuxtConfig({
 				{
 					name: 'og:image',
 					content: '/og.png'
-				}
+				},
+				{
+					name: 'og:title',
+					content: 'Sufity napinane - Radec24 | Sufity napinane inowrcoław kujawsko-pomorskie'
+				},
+				{
+					name: 'og:description',
+					content: 'Radec 24 - Jesteśmy wiodącym i wykonawcą profesjonalnych rozwiązań sufitów napinanych, które dodają nie tylko uroku, ale także funkcjonalności Twoim przestrzeniom. Nasza firma specjalizuje się w montażu sufitów napinanych o najwyższej jakości, spełniających najbardziej wymagające standardy estetyczne i techniczne.'
+				},
 			],
 			link: [{
 					rel: 'icon',
@@ -49,6 +57,7 @@ export default defineNuxtConfig({
 		'~/modules/sitemap',		//sitemap
 		'nuxt-gtag',				//google analytics
   	],
+
 
 
   	sitemap: {

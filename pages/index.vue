@@ -20,8 +20,6 @@
                         </h1>
                     </div>
                 </div>
-                
-                
             </div>
             
             <div class="md:w-full px-9 relative">
@@ -83,7 +81,6 @@
             <Swpier-review />
         </div>
 
-
         <div class="my-12 md:my-36 md:container md:mx-auto" id="kontakt">
             <h1 class="text-gray-800 text-4xl font-bold text-center leading-snug mb-8 md:text-5xl md:text-left">
                 <span class="roboto podkreslenie">Skontaktuj</span> się z <br class="md:hidden"/> nami
@@ -110,13 +107,10 @@
                         <p class="text-xl text-red-500 font-semibold">Ludzisko 56</p>
                         <p class="text-xl text-red-500 font-semibold">88-160 Janikowo</p>
                     </a>
-
                 </div>
             </div>
-            
         </div>
 
-       
     </div>
 </template>
 
