@@ -3,7 +3,7 @@
         <div class="h-16 md:h-24 border-b px-14 lg:px-24 relative">
             <div class="md:w-fit h-full flex justify-center items-center">
                 <NuxtLink to="/">
-                    <nuxt-img src="/img/logo.png" alt="RADEC24" class="h-5" />
+                    <nuxt-img src="/img/logo.png" alt="RADEC24" quality="10" height="20px" class="h-5" />
                 </NuxtLink>
             </div>
             <div class="z-50 hidden md:block desktopmenu absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">

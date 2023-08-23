@@ -1,7 +1,7 @@
 <template>
     <div class="bg-gray-800 py-12 pb-36 md:pb-4 px-8">
         <div class="px-20 md:max-w-md md:mx-auto flex flex-col justify-center">
-            <nuxt-img src="/img/logo white.png" alt="RADEC24" />
+            <nuxt-img src="/img/logo white.png" quality="10" alt="RADEC24" />
             <div class="my-4 px-2 flex justify-between gap-4">
                 <a href="https://www.facebook.com/RADEC24pl/" target="_blank"><img src="/icons/facebook.svg" alt="fb" /></a>
                 <a href="https://www.instagram.com/radec24pl/" target="_blank"><img src="/icons/instagram.svg" alt="fb" /></a>
