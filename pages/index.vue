@@ -49,7 +49,7 @@
                 <div class="rounded-xl bg-white py-4 px-4 w-fit border md:max-w-sm">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="p-1 bg-whitered rounded-lg">
-                            <nuxt-img loading="lazy" src="/icons/paint-roller.svg" alt="x" />
+                            <nuxt-img class="w-[36px]" loading="lazy" src="/icons/paint-roller.svg" alt="x" />
                         </div>
                         <p class="font-semibold">Możliwości aranżacyjne</p>
                     </div>
@@ -58,7 +58,7 @@
                 <div class="rounded-xl bg-white py-4 px-4 w-fit border md:max-w-sm">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="p-1 bg-whitered rounded-lg">
-                            <nuxt-img loading="lazy" src="/icons/feather.svg" alt="x" />
+                            <nuxt-img class="w-[36px]" loading="lazy" src="/icons/feather.svg" alt="x" />
                         </div>
                         <p class="font-semibold">Lekka i cienka konstrukcja</p>
                     </div>
@@ -67,7 +67,7 @@
                 <div class="rounded-xl bg-white py-4 px-4 w-fit border md:max-w-sm">
                     <div class="flex items-center gap-4 mb-6">
                         <div class="p-1 bg-whitered rounded-lg">
-                            <nuxt-img loading="lazy" src="/icons/waves.svg" alt="x" />
+                            <nuxt-img class="w-[36px]" loading="lazy" src="/icons/waves.svg" alt="x" />
                         </div>
                         <p class="font-semibold">Maskowanie nierówności</p>
                     </div>
@@ -92,19 +92,19 @@
             <div class="flex flex-col items-center gap-5 md:flex-row md:justify-center md:mt-12">
                 <div class="bg-white border w-fit rounded-xl py-2 px-4 flex items-center gap-4 justify-center">
                     <div class="p-2 bg-whitered rounded-lg">
-                        <nuxt-img loading="lazy" src="/icons/phone.svg" alt="x" />
+                        <nuxt-img class="w-[36px]" loading="lazy" src="/icons/phone.svg" alt="x" />
                     </div>
                     <a class="text-xl text-red-500 font-semibold" href="tel:737444950">737 444 950</a>
                 </div>
                 <div class="bg-white border w-fit rounded-xl py-2 px-4 flex items-center gap-4 justify-center">
                     <div class="p-2 bg-whitered rounded-lg">
-                        <nuxt-img loading="lazy" src="/icons/envelope.svg" alt="x" />
+                        <nuxt-img class="w-[36px]" loading="lazy" src="/icons/envelope.svg" alt="x" />
                     </div>
                     <a class="text-xl text-red-500 font-semibold" href="mailto:radec24@wp.pl">radec24@wp.pl</a>
                 </div>
                 <div class="bg-white border w-fit rounded-xl py-2 px-4 flex items-center gap-4 justify-center">
                     <div class="p-2 bg-whitered rounded-lg">
-                        <nuxt-img loading="lazy" src="/icons/house.svg" alt="x" />
+                        <nuxt-img class="w-[36px]" loading="lazy" src="/icons/house.svg" alt="x" />
                     </div>
                     <a href="https://www.google.com/maps/place/RADEC24+sufity+napinane,+wyko%C5%84czenia+wn%C4%99trz,+Inowroc%C5%82aw/@52.7947042,18.2821023,17z/data=!3m1!4b1!4m6!3m5!1s0x470350898bd704dd:0xe8d349a8766307bf!8m2!3d52.794701!4d18.2846772!16s%2Fg%2F11bx8kgsb1?entry=ttu" target="_blank">
                         <p class="text-xl text-red-500 font-semibold">Ludzisko 56</p>
