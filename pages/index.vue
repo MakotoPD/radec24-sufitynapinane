@@ -53,7 +53,7 @@
                         </div>
                         <p class="font-semibold">Możliwości aranżacyjne</p>
                     </div>
-                    <p class="text-sm">Istnieje wiele rodzajów sufitów napinanych. Od klasycznych połyskowych, przez matowe i satynowe po wielopoziomowe lub z nadrukiem. A jeśli chcesz zrobić impreze możesz również mieć sufit, który w świeci po przez zamontowanie ledów nad sufitem!</p>
+                    <p class="text-sm">Sufity napinane to rewelacyjne rozwiązanie, które doskonale pasuje do praktycznie każdego rodzaju wnętrza. Niezależnie czy mamy do czynienia z łazienką, kuchnią, pokojem czy biurem, sufit napinany z powodzeniem odnajdzie się w każdym z tych miejsc. Nawet w większych przestrzeniach takich jak hale czy obiekty użyteczności publicznej, sufit napinany staje się idealnym wyborem.</p>
                 </div>
                 <div class="rounded-xl bg-white py-4 px-4 w-fit border md:max-w-sm">
                     <div class="flex items-center gap-4 mb-6">
