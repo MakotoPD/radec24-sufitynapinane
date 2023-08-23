@@ -62,7 +62,7 @@
                         </div>
                         <p class="font-semibold">Lekka i cienka konstrukcja</p>
                     </div>
-                    <p class="text-sm">Sufit napinany składa się z profili wokół sufity, a pomiędzy nimi rozciągnięta jest membrana zrobiona z gumowej folii. Sufit napinany możezostać zamontowany nawet i 3 cm pod aktualnym sufitem. Pomimo tak lekkiej konstrukcji sufit jest odporny na uderenia (np. z korka od szampana)</p>
+                    <p class="text-sm">Sufit napinany składa się z profili wokół sufity, a pomiędzy nimi rozciągnięta jest membrana zrobiona z gumowej folii. Sufit napinany możezostać zamontowany nawet i 3 cm pod aktualnym sufitem. Pomimo tak lekkiej konstrukcji sufit jest odporny na uderzenia (np. z korka od szampana)</p>
                 </div>
                 <div class="rounded-xl bg-white py-4 px-4 w-fit border md:max-w-sm">
                     <div class="flex items-center gap-4 mb-6">
