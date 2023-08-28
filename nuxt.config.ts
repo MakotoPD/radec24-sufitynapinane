@@ -20,7 +20,7 @@ export default defineNuxtConfig({
 				},
 				{
 					name: 'description',
-					content: 'Radec 24 - Jesteśmy wiodącym i wykonawcą profesjonalnych rozwiązań sufitów napinanych, które dodają nie tylko uroku, ale także funkcjonalności Twoim przestrzeniom. Nasza firma specjalizuje się w montażu sufitów napinanych o najwyższej jakości, spełniających najbardziej wymagające standardy estetyczne i techniczne.'
+					content: 'Radec 24 - Jesteśmy wykonawcą profesjonalnych rozwiązań sufitów napinanych, które dodają nie tylko uroku, ale także funkcjonalności Twoim przestrzeniom. Nasza firma specjalizuje się w montażu sufitów napinanych o najwyższej jakości, spełniających najbardziej wymagające standardy estetyczne i techniczne.'
 				},
 				{
 					name: 'keywords',
@@ -36,7 +36,7 @@ export default defineNuxtConfig({
 				},
 				{
 					name: 'og:description',
-					content: 'Radec 24 - Jesteśmy wiodącym i wykonawcą profesjonalnych rozwiązań sufitów napinanych, które dodają nie tylko uroku, ale także funkcjonalności Twoim przestrzeniom. Nasza firma specjalizuje się w montażu sufitów napinanych o najwyższej jakości, spełniających najbardziej wymagające standardy estetyczne i techniczne.'
+					content: 'Radec 24 - Jesteśmy wykonawcą profesjonalnych rozwiązań sufitów napinanych, które dodają nie tylko uroku, ale także funkcjonalności Twoim przestrzeniom. Nasza firma specjalizuje się w montażu sufitów napinanych o najwyższej jakości, spełniających najbardziej wymagające standardy estetyczne i techniczne.'
 				},
 			],
 			link: [{

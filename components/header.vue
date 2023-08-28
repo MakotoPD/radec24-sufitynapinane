@@ -42,7 +42,6 @@
                 <button @click="opensumbenuMobile()" class="px-1 py-1 bg-red-300/50 rounded-xl focus:scale-125 duration-150">
                     <img src="/icons/waves.svg" alt="x"/>
                 </button>
-               
             </div>
             <div class="oSufitach hidden absolute -top-2 right-3 -translate-y-full ">
                 <div class="relative px-8 py-4 border bg-neutral-200/60 backdrop-blur-sm rounded-3xl">
