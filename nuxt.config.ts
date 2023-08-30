@@ -1,4 +1,3 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
@@ -57,6 +56,7 @@ export default defineNuxtConfig({
 
   },
 
+
   modules: [
     '@nuxtjs/tailwindcss',    		//css framework
 		'@nuxt/image-edge',       	//images
@@ -65,7 +65,6 @@ export default defineNuxtConfig({
 		'~/modules/sitemap',		//sitemap
 		'nuxt-gtag',				//google analytics
   	],
-
 
 
   	sitemap: {
@@ -77,9 +76,11 @@ export default defineNuxtConfig({
     	{ src: "@/plugins/aos", ssr: false, mode: "client" }
   	],
 
+
   	tailwindcss: {
 		configPath: 'tailwind.config',
 	},
+
 
   	googleFonts: {
 		display: 'swap',
@@ -93,9 +94,11 @@ export default defineNuxtConfig({
 		},
 	},
 
+
 	gtag: {
 		id: 'G-E0WG7DX403'
 	},
+
 
 	runtimeConfig: {
 
@@ -104,9 +107,11 @@ export default defineNuxtConfig({
 		}
 	  },
 
+	
   	css: [
 		'@/assets/css/global.css',
 	],
+
 
 	routeRules:{
 		'/': { ssr: false, prerender: true },
