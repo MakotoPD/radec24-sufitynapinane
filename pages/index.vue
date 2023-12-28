@@ -51,7 +51,7 @@
                         </div>
                         <p class="font-semibold">Możliwości aranżacyjne</p>
                     </div>
-                    <p class="text-sm">Sufity napinane to rewelacyjne rozwiązanie, które doskonale pasuje do praktycznie każdego rodzaju wnętrza. Niezależnie czy mamy do czynienia z łazienką, kuchnią, pokojem czy biurem, sufit napinany z powodzeniem odnajdzie się w każdym z tych miejsc. Nawet w większych przestrzeniach takich jak hale czy obiekty użyteczności publicznej, sufit napinany staje się idealnym wyborem.</p>
+                    <p class="text-sm">Sufity napinane to rewelacyjne rozwiązanie, które doskonale pasuje do każdego rodzaju wnętrza. Niezależnie czy mamy do czynienia z łazienką, kuchnią, pokojem czy biurem, sufit napinany z powodzeniem odnajdzie się w każdym z tych miejsc. Nawet w większych przestrzeniach takich jak hale czy obiekty użyteczności publicznej, sufit napinany staje się idealnym wyborem.</p>
                 </div>
                 <div class="rounded-xl bg-white py-4 px-4 w-fit border md:max-w-sm">
                     <div class="flex items-center gap-4 mb-6">
@@ -60,7 +60,7 @@
                         </div>
                         <p class="font-semibold">Lekka i cienka konstrukcja</p>
                     </div>
-                    <p class="text-sm">Sufit napinany składa się z profili wokół sufity, a pomiędzy nimi rozciągnięta jest membrana zrobiona z gumowej folii. Sufit napinany możezostać zamontowany nawet i 3 cm pod aktualnym sufitem. Pomimo tak lekkiej konstrukcji sufit jest odporny na uderzenia (np. z korka od szampana)</p>
+                    <p class="text-sm">Sufit napinany składa się z profili wokół pomieszczenia. Pomiędzy nimi rozciągnięta jest membrana. Sufit napinany może zostać zamontowany już 3 cm pod aktualnym sufitem. Pomimo tak lekkiej konstrukcji jest on odporny na uderzenia (np. z korka od szampana).</p>
                 </div>
                 <div class="rounded-xl bg-white py-4 px-4 w-fit border md:max-w-sm">
                     <div class="flex items-center gap-4 mb-6">
@@ -69,7 +69,7 @@
                         </div>
                         <p class="font-semibold">Maskowanie nierówności</p>
                     </div>
-                    <p class="text-sm">Sufity napinane oferują możliwość maskowania zniszczonych starych tynków oraz nierówności w stropach, przyczyniając się do poprawy walorów estetycznych wnętrza. Ich atrakcyjny wygląd sprawia, że stanowią doskonałą propozycję zarówno dla przestrzeni mieszkalnych, jak i komercyjnych, dodając im niebanalnego uroku i elegancji.</p>
+                    <p class="text-sm">Sufity napinane oferują możliwość maskowania zniszczonych starych tynków oraz nierówności w stropach, przyczyniając się do poprawy walorów estetycznych wnętrza. Ich atrakcyjny wygląd sprawia, że stanowią doskonałą propozycję zarówno dla przestrzeni mieszkalnych oraz komercyjnych, dodając im niebanalnego uroku i elegancji.</p>
                 </div>
             </div>
         </div>
@@ -104,8 +104,7 @@
                         <nuxt-img class="w-[36px]" loading="lazy" src="/icons/house.svg" alt="x" />
                     </div>
                     <a href="https://www.google.com/maps/place/RADEC24+sufity+napinane,+wyko%C5%84czenia+wn%C4%99trz,+Inowroc%C5%82aw/@52.7947042,18.2821023,17z/data=!3m1!4b1!4m6!3m5!1s0x470350898bd704dd:0xe8d349a8766307bf!8m2!3d52.794701!4d18.2846772!16s%2Fg%2F11bx8kgsb1?entry=ttu" target="_blank">
-                        <p class="text-xl text-red-500 font-semibold">Ludzisko 56</p>
-                        <p class="text-xl text-red-500 font-semibold">88-160 Janikowo</p>
+                        <p class="text-xl text-red-500 font-semibold">Inowrocław</p>
                     </a>
                 </div>
             </div>
