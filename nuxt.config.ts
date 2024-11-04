@@ -23,7 +23,7 @@ export default defineNuxtConfig({
 			},
 			{
 				name: 'keywords',
-				content: 'sufity napinane, sufity napinany, sufity, napinany, stretch ceiling, ceiling, stretch, kujawsko, pomorskie, kujawsko pomorskie, sufity napinane cena, sufity napinane co to jest, sufity napinane inowrocław, sufity napinane bydgoszcz, sufity napinane toruń, sufit napinany czarny, sufit napinany w salonie, sufit napinany realizacje, folia, lustro, cena, z, w, na, czarny, do, jak'
+				content: 'sufity napinane, sufity napinany, sufity, napinany, stretch ceiling, ceiling, stretch, kujawsko, pomorskie, kujawsko pomorskie, sufity napinane cena, sufity napinane co to jest, sufity napinane inowrocław, sufity napinane bydgoszcz, sufity napinane toruń, sufit napinany czarny, sufit napinany w salonie, sufit napinany realizacje, folia, lustro, cena, z, w, na, czarny, do, jak, toruń, bydgoszcz, włocławek'
 			},
 			{
 				name: 'og:image',
@@ -52,13 +52,19 @@ export default defineNuxtConfig({
 				href: '/favicon.ico'
 			},
 		],
+		script: [
+			{
+				type: 'application/ld+json',
+				children: '{"@context": "https://schema.org","@type": "GeneralContractor","name": "RADEC24","image": "https://radec24.pl/favicon.png","@id": "","url": "https://radec24.pl","telephone": "+48737444950","priceRange": "2000-15000","address": {  "@type": "PostalAddress",  "streetAddress": "Świętego Ducha 108", "addressLocality": "Inowrocław","postalCode": "88-100","addressCountry": "PL"},"openingHoursSpecification": {"@type": "OpeningHoursSpecification","dayOfWeek": [  "Monday",  "Tuesday",  "Wednesday",  "Thursday",  "Friday",  "Saturday", "Sunday"],"opens": "00:00","closes": "23:59"},"sameAs": ["https://www.facebook.com/RADEC24pl/","https://www.instagram.com/radec24pl","https://www.youtube.com/channel/UCKJPSXYHxrWx0PDYVwqLGEw/","https://radec24.pl"] }'
+			}
+		]
     },
 
   },
   spaLoadingTemplate: false,
 
   modules: [
-    '@nuxtjs/tailwindcss',    		//css framework
+		'@nuxtjs/tailwindcss',    	//css framework
 		'@nuxt/image-edge',       	//images
 		'nuxt-gtag',             	//gtag google analytics
 		'@nuxtjs/google-fonts',   	//google fonts
@@ -68,7 +74,7 @@ export default defineNuxtConfig({
 
 
   	sitemap: {
-		hostname: 'https://sufitynapinane.radec24.pl',
+		hostname: 'https://radec24.pl',
 	},
 
 
