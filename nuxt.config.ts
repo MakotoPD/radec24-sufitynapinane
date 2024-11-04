@@ -2,7 +2,7 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   app: {
     head: {
-		title: 'Sufity napinane - Radec24 | Sufity napinane inowrcoław kujawsko-pomorskie',
+		title: 'Sufity napinane - Radec24 | Sufity napinane inowrcoław',
 		htmlAttrs: {
 			lang: 'pl',
 		},
@@ -31,7 +31,7 @@ export default defineNuxtConfig({
 			},
 			{
 				name: 'og:title',
-				content: 'Sufity napinane - Radec24 | Sufity napinane inowrcoław kujawsko-pomorskie'
+				content: 'Sufity napinane - Radec24 | Sufity napinane inowrcoław'
 			},
 			{
 				name: 'og:description',
