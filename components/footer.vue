@@ -13,7 +13,7 @@
         <div class="mt-12 text-gray-500 text-center flex flex-col gap-1">
             <hr class="border-gray-600 mb-4">
             <div class="md:flex justify-between">
-                <p>© 2023 Radec24. MIT.</p>
+                <p>© 2026 Radec24. MIT.</p>
                 <p>Designed & Development by <a class="underline" href="https://makoto.com.pl" target="_blank"> Makoto.</a></p>
             </div>
         </div>
