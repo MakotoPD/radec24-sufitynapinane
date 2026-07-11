@@ -2,8 +2,8 @@ services:
   app:
     build: .
     restart: unless-stopped
-    ports:
-      - '3000:3000'
+    expose:
+      - '3000'
     env_file:
       - .env
     environment:
@@ -16,6 +16,9 @@ services:
       NITRO_HOST: '0.0.0.0'
     volumes:
       - gallery_uploads:/app/.data/uploads
+    networks:
+      - default
+      - dokploy-network
     depends_on:
       db:
         condition: service_healthy
@@ -34,6 +37,13 @@ services:
       interval: 5s
       timeout: 5s
       retries: 10
+    networks:
+      - default
+
+networks:
+  default:
+  dokploy-network:
+    external: true
 
 volumes:
   pg_data:
