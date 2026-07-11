@@ -1,4 +1,0 @@
-User-agent: *
-Disallow:
-
-Sitemap: https://radec24.pl/sitemap.xml
