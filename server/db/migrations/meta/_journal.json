@@ -8,6 +8,20 @@
       "when": 1783802825915,
       "tag": "0000_complete_squadron_sinister",
       "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1783806142360,
+      "tag": "0001_far_stephen_strange",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1783808086169,
+      "tag": "0002_natural_maximus",
+      "breakpoints": true
     }
   ]
 }

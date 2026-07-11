@@ -4,6 +4,7 @@ export const adminUsers = pgTable('admin_users', {
   id: serial('id').primaryKey(),
   username: varchar('username', { length: 64 }).notNull().unique(),
   passwordHash: text('password_hash').notNull(),
+  locked: boolean('locked').notNull().default(false),
   createdAt: timestamp('created_at').notNull().defaultNow()
 })
 
@@ -23,6 +24,15 @@ export const galleryImages = pgTable('gallery_images', {
   location: varchar('location', { length: 128 }),
   category: varchar('category', { length: 64 }),
   sortOrder: integer('sort_order').notNull().default(0),
+  createdAt: timestamp('created_at').notNull().defaultNow()
+})
+
+export const passwordResetTokens = pgTable('password_reset_tokens', {
+  id: serial('id').primaryKey(),
+  userId: integer('user_id').notNull().references(() => adminUsers.id),
+  token: varchar('token', { length: 64 }).notNull().unique(),
+  expiresAt: timestamp('expires_at').notNull(),
+  usedAt: timestamp('used_at'),
   createdAt: timestamp('created_at').notNull().defaultNow()
 })
 

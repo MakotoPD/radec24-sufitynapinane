@@ -36,7 +36,7 @@ export default defineNuxtConfig({
   },
 
   site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || 'https://radec24.pl',
+    url: 'https://radec24.pl',
     name: 'Radec24 – Sufity napinane Inowrocław i region kujawsko-pomorski',
     description: 'Montaż sufitów napinanych w Inowrocławiu, Janikowie i całym regionie kujawsko-pomorskim. Bezpłatny pomiar i wycena, montaż bez kucia i remontu.',
     defaultLocale: 'pl'
@@ -67,18 +67,23 @@ export default defineNuxtConfig({
     ]
   },
 
+  // Wartości poniżej to tylko defaulty na wypadek braku zmiennej środowiskowej.
+  // W runtime Nuxt nadpisuje je automatycznie zmiennymi NUXT_<KLUCZ> (np. NUXT_DATABASE_URL) —
+  // ważne w Dockerze, gdzie `pnpm build` i `docker run` mają różne env (sekrety nie są dostępne przy buildzie).
   runtimeConfig: {
-    databaseUrl: process.env.DATABASE_URL,
-    resendApiKey: process.env.RESEND_API_KEY,
-    contactToEmail: process.env.CONTACT_TO_EMAIL || 'radec24@wp.pl',
-    contactFromEmail: process.env.CONTACT_FROM_EMAIL || 'radec24@makoto.com.pl',
-    galleryUploadDir: process.env.GALLERY_UPLOAD_DIR || '.data/uploads',
-    admin1Username: process.env.ADMIN1_USERNAME || 'Technik',
-    admin1Password: process.env.ADMIN1_PASSWORD || '',
-    admin2Username: process.env.ADMIN2_USERNAME || 'radec24',
-    admin2Password: process.env.ADMIN2_PASSWORD || '',
+    databaseUrl: '',
+    resendApiKey: '',
+    contactToEmail: 'radec24@wp.pl',
+    contactFromEmail: 'radec24@makoto.com.pl',
+    galleryUploadDir: '.data/uploads',
+    admin1Username: 'Technik',
+    admin1Password: '',
+    admin1RecoveryEmail: 'patrydab4@gmail.com',
+    admin2Username: 'radec24',
+    admin2Password: '',
+    admin2RecoveryEmail: 'radec24@wp.pl',
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || 'https://radec24.pl'
+      siteUrl: 'https://radec24.pl'
     }
   },
 

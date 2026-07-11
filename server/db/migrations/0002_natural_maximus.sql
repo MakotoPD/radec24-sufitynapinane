@@ -1,0 +1,1 @@
+ALTER TABLE "admin_users" ADD COLUMN "locked" boolean DEFAULT false NOT NULL;

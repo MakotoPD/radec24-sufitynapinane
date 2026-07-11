@@ -7,8 +7,11 @@ services:
     env_file:
       - .env
     environment:
+      # DATABASE_URL: używane przez server/db/migrate.mjs (zwykły skrypt Node, poza kontekstem Nuxt)
+      # NUXT_DATABASE_URL: to samo, ale w konwencji Nuxt runtimeConfig (patrz nuxt.config.ts)
       DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
-      GALLERY_UPLOAD_DIR: .data/uploads
+      NUXT_DATABASE_URL: postgres://${POSTGRES_USER}:${POSTGRES_PASSWORD}@db:5432/${POSTGRES_DB}
+      NUXT_GALLERY_UPLOAD_DIR: .data/uploads
       NITRO_PORT: 3000
       NITRO_HOST: '0.0.0.0'
     volumes:

@@ -19,7 +19,7 @@ const navItems = [
       <div class="container-page flex items-center justify-between py-4 gap-4 flex-wrap">
         <div class="flex items-center gap-8">
           <NuxtLink to="/admin" class="font-display font-bold text-lg text-(--color-ink)">Radec24 · Panel</NuxtLink>
-          <nav v-if="route.path !== '/admin/login'" class="flex items-center gap-5">
+          <nav v-if="!['/admin/login', '/admin/resetuj-haslo'].includes(route.path)" class="flex items-center gap-5">
             <NuxtLink
               v-for="item in navItems"
               :key="item.to"
