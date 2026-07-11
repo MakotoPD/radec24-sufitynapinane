@@ -19,8 +19,8 @@ async function onSubmit() {
     await $fetch('/api/admin/login', { method: 'POST', body: { username: username.value, password: password.value } })
     await refreshSession()
     await navigateTo('/admin')
-  } catch {
-    error.value = 'Nieprawidłowa nazwa użytkownika lub hasło.'
+  } catch (e: any) {
+    error.value = e?.data?.statusMessage || 'Nieprawidłowa nazwa użytkownika lub hasło.'
   } finally {
     loading.value = false
   }
