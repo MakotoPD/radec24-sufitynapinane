@@ -52,7 +52,8 @@ export default defineNuxtConfig({
   },
 
   ogImage: {
-    enabled: true
+    enabled: true,
+    fontSubsets: ['latin', 'latin-ext']
   },
 
   image: {

@@ -7,7 +7,7 @@ defineProps<{
 </script>
 
 <template>
-  <div style="width: 1200px; height: 630px; position: relative; background: #1C1917; font-family: sans-serif;">
+  <div style="width: 1200px; height: 630px; position: relative; background: #1C1917; font-family: 'Inter', sans-serif;">
     <!-- decorative background -->
     <div style="position: absolute; top: -120px; right: -120px; width: 520px; height: 520px; border-radius: 9999px; background: linear-gradient(160deg, #E3423A, #8f221d); opacity: 0.9; display: flex;" />
     <div style="position: absolute; top: 60px; right: 40px; width: 420px; height: 420px; border-radius: 9999px; border: 1.5px solid rgba(255,255,255,0.18); display: flex;" />
@@ -52,7 +52,7 @@ defineProps<{
             <div style="font-size: 13px; color: #9A948B; margin-top: 4px; display: flex;">czas montażu</div>
           </div>
         </div>
-        <div style="background: #E3423A; color: #ffffff; font-weight: 700; font-size: 17px; padding: 16px 30px; border-radius: 9999px; display: flex;">radec24.pl</div>
+        <div style="background: #E3423A; color: #ffffff; font-weight: 700; font-size: 17px; padding: 16px 30px; border-radius: 9999px; display: flex;">737 444 950</div>
       </div>
     </div>
   </div>
