@@ -59,6 +59,9 @@ const year = new Date().getFullYear()
         <span>© {{ year }} Radec24. Wszystkie prawa zastrzeżone.</span>
         <span>{{ companyInfo.serviceCities.join(' · ') }}</span>
       </div>
+      <div class="pt-3 text-[12px] text-(--color-ink-4)">
+        Design &amp; Development by <a href="http://makoto.com.pl" target="_blank" rel="noopener noreferrer">MakotoPD</a>
+      </div>
     </div>
   </footer>
 </template>

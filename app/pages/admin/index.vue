@@ -14,20 +14,58 @@ interface GalleryItem {
 const { data, refresh } = await useFetch<{ items: GalleryItem[] }>('/api/admin/gallery')
 const items = computed(() => data.value?.items ?? [])
 
+const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp']
+const MAX_SIZE = 8 * 1024 * 1024
+
 const fileInput = ref<HTMLInputElement | null>(null)
+const selectedFile = ref<File | null>(null)
+const previewUrl = ref<string | null>(null)
+const isDragging = ref(false)
+
 const uploadTitle = ref('')
 const uploadLocation = ref('')
 const uploadCategory = ref('')
 const uploading = ref(false)
 const uploadError = ref('')
 
+function setFile(file: File | undefined | null) {
+  if (!file) return
+  if (!ALLOWED_TYPES.includes(file.type)) {
+    uploadError.value = 'Dozwolone są tylko pliki JPG, PNG lub WebP.'
+    return
+  }
+  if (file.size > MAX_SIZE) {
+    uploadError.value = 'Plik jest zbyt duży (limit 8 MB).'
+    return
+  }
+  uploadError.value = ''
+  selectedFile.value = file
+  if (previewUrl.value) URL.revokeObjectURL(previewUrl.value)
+  previewUrl.value = URL.createObjectURL(file)
+}
+
+function onFileChange(e: Event) {
+  setFile((e.target as HTMLInputElement).files?.[0])
+}
+
+function onDrop(e: DragEvent) {
+  isDragging.value = false
+  setFile(e.dataTransfer?.files?.[0])
+}
+
+function clearFile() {
+  selectedFile.value = null
+  if (previewUrl.value) URL.revokeObjectURL(previewUrl.value)
+  previewUrl.value = null
+  if (fileInput.value) fileInput.value.value = ''
+}
+
 async function onUpload() {
   uploadError.value = ''
-  const file = fileInput.value?.files?.[0]
-  if (!file) { uploadError.value = 'Wybierz plik zdjęcia.'; return }
+  if (!selectedFile.value) { uploadError.value = 'Wybierz plik zdjęcia.'; return }
 
   const form = new FormData()
-  form.append('file', file)
+  form.append('file', selectedFile.value)
   if (uploadTitle.value) form.append('title', uploadTitle.value)
   if (uploadLocation.value) form.append('location', uploadLocation.value)
   if (uploadCategory.value) form.append('category', uploadCategory.value)
@@ -38,7 +76,7 @@ async function onUpload() {
     uploadTitle.value = ''
     uploadLocation.value = ''
     uploadCategory.value = ''
-    if (fileInput.value) fileInput.value.value = ''
+    clearFile()
     await refresh()
   } catch (e: any) {
     uploadError.value = e?.data?.statusMessage || 'Nie udało się przesłać zdjęcia.'
@@ -79,28 +117,52 @@ async function move(index: number, dir: -1 | 1) {
 
     <div class="card p-6 mb-8">
       <h2 class="text-base font-semibold text-(--color-ink) mb-4">Dodaj zdjęcie</h2>
-      <form class="grid grid-cols-1 sm:grid-cols-4 gap-3 items-end" @submit.prevent="onUpload">
-        <div class="sm:col-span-1">
-          <label class="text-xs font-semibold text-(--color-ink-3) block mb-1">Plik (JPG/PNG/WebP)</label>
-          <input ref="fileInput" type="file" accept="image/jpeg,image/png,image/webp" class="text-sm w-full">
+      <form class="flex flex-col gap-5" @submit.prevent="onUpload">
+        <div
+          class="relative rounded-2xl border-2 border-dashed transition-colors cursor-pointer flex flex-col items-center justify-center text-center px-6 py-9"
+          :class="isDragging ? 'border-(--color-accent) bg-(--color-accent-light)' : 'border-(--color-border) bg-(--color-bg) hover:border-(--color-ink-5)'"
+          @click="fileInput?.click()"
+          @dragenter.prevent="isDragging = true"
+          @dragover.prevent="isDragging = true"
+          @dragleave.prevent="isDragging = false"
+          @drop.prevent="onDrop"
+        >
+          <input ref="fileInput" type="file" accept="image/jpeg,image/png,image/webp" class="hidden" @change="onFileChange">
+
+          <template v-if="previewUrl">
+            <img :src="previewUrl" alt="" class="w-28 h-28 object-cover rounded-xl mb-3 pointer-events-none">
+            <div class="text-sm font-medium text-(--color-ink) break-all px-4">{{ selectedFile?.name }}</div>
+            <button type="button" class="text-xs text-(--color-accent) font-semibold mt-2 cursor-pointer bg-transparent border-none" @click.stop="clearFile">
+              Usuń i wybierz inny plik
+            </button>
+          </template>
+          <template v-else>
+            <div class="w-12 h-12 rounded-full bg-(--color-accent-light) flex items-center justify-center mb-3 pointer-events-none">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 16V4M12 4l-4 4M12 4l4 4" stroke="#E3423A" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" /><path d="M4 16v2a2 2 0 002 2h12a2 2 0 002-2v-2" stroke="#E3423A" stroke-width="1.8" stroke-linecap="round" /></svg>
+            </div>
+            <div class="text-sm font-semibold text-(--color-ink) pointer-events-none">Przeciągnij zdjęcie tutaj lub kliknij, aby wybrać plik</div>
+            <div class="text-xs text-(--color-ink-3) mt-1 pointer-events-none">JPG, PNG lub WebP — maks. 8&nbsp;MB</div>
+          </template>
         </div>
-        <div>
-          <label class="text-xs font-semibold text-(--color-ink-3) block mb-1">Tytuł</label>
-          <input v-model="uploadTitle" type="text" class="w-full px-3 py-2 rounded-lg border border-(--color-border) text-sm">
-        </div>
-        <div>
-          <label class="text-xs font-semibold text-(--color-ink-3) block mb-1">Miejscowość</label>
-          <input v-model="uploadLocation" type="text" class="w-full px-3 py-2 rounded-lg border border-(--color-border) text-sm">
-        </div>
-        <div class="flex gap-2">
-          <div class="flex-1">
+
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <div>
+            <label class="text-xs font-semibold text-(--color-ink-3) block mb-1">Tytuł</label>
+            <input v-model="uploadTitle" type="text" class="w-full px-3 py-2 rounded-lg border border-(--color-border) text-sm">
+          </div>
+          <div>
+            <label class="text-xs font-semibold text-(--color-ink-3) block mb-1">Miejscowość</label>
+            <input v-model="uploadLocation" type="text" class="w-full px-3 py-2 rounded-lg border border-(--color-border) text-sm">
+          </div>
+          <div>
             <label class="text-xs font-semibold text-(--color-ink-3) block mb-1">Kategoria</label>
             <input v-model="uploadCategory" type="text" placeholder="np. Salon" class="w-full px-3 py-2 rounded-lg border border-(--color-border) text-sm">
           </div>
-          <button type="submit" class="btn-accent px-5 py-2 text-sm self-end disabled:opacity-60" :disabled="uploading">
-            {{ uploading ? 'Wysyłanie…' : 'Dodaj' }}
-          </button>
         </div>
+
+        <button type="submit" class="btn-accent px-6 py-3 text-sm self-start disabled:opacity-60" :disabled="uploading || !selectedFile">
+          {{ uploading ? 'Wysyłanie…' : 'Dodaj zdjęcie' }}
+        </button>
       </form>
       <div v-if="uploadError" class="text-(--color-accent) text-sm mt-3">{{ uploadError }}</div>
     </div>
