@@ -47,7 +47,7 @@ const filtered = computed(() => activeFilter.value === 'Wszystkie'
     <section class="container-page pt-4 pb-20">
       <div v-if="filtered.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5.5">
         <div v-for="g in filtered" :key="g.id" class="relative rounded-2xl overflow-hidden aspect-4/3">
-          <NuxtImg :src="g.url" :alt="g.title || 'Realizacja Radec24'" class="w-full h-full object-cover" width="420" height="315" />
+          <img :src="g.url" :alt="g.title || 'Realizacja Radec24'" class="w-full h-full object-cover" width="420" height="315" loading="lazy">
           <div v-if="g.category" class="absolute left-3.5 top-3.5 bg-(--color-ink)/80 text-white px-3 py-1.5 rounded-lg text-[11.5px] font-semibold">{{ g.category }}</div>
           <div v-if="g.location" class="absolute left-3.5 bottom-3.5 bg-white/92 px-3 py-1.5 rounded-lg text-[12.5px] font-semibold text-(--color-ink)">{{ g.location }}</div>
         </div>

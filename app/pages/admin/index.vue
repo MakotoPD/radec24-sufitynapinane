@@ -107,7 +107,7 @@ async function move(index: number, dir: -1 | 1) {
 
     <div v-if="items.length" class="flex flex-col gap-3">
       <div v-for="(item, index) in items" :key="item.id" class="card p-4 flex flex-col sm:flex-row gap-4 items-start sm:items-center">
-        <NuxtImg :src="item.url" :alt="item.title || ''" class="w-full sm:w-28 h-28 object-cover rounded-lg flex-none" width="112" height="112" />
+        <img :src="item.url" :alt="item.title || ''" class="w-full sm:w-28 h-28 object-cover rounded-lg flex-none" width="112" height="112" loading="lazy">
         <div class="grid grid-cols-1 sm:grid-cols-3 gap-2 flex-1 w-full">
           <input v-model="item.title" placeholder="Tytuł" class="px-3 py-2 rounded-lg border border-(--color-border) text-sm" @blur="saveMeta(item)">
           <input v-model="item.location" placeholder="Miejscowość" class="px-3 py-2 rounded-lg border border-(--color-border) text-sm" @blur="saveMeta(item)">
