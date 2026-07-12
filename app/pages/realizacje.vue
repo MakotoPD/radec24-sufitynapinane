@@ -18,6 +18,14 @@ const activeFilter = ref('Wszystkie')
 const filtered = computed(() => activeFilter.value === 'Wszystkie'
   ? items.value
   : items.value.filter(i => i.category === activeFilter.value))
+
+const lightboxImages = computed(() => filtered.value.map(g => ({
+  url: g.url,
+  alt: g.title || 'Realizacja Radec24',
+  caption: [g.category, g.location].filter(Boolean).join(' · ') || null
+})))
+
+const lightboxIndex = ref<number | null>(null)
 </script>
 
 <template>
@@ -46,11 +54,17 @@ const filtered = computed(() => activeFilter.value === 'Wszystkie'
 
     <section class="container-page pt-4 pb-20">
       <div v-if="filtered.length" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5.5">
-        <div v-for="g in filtered" :key="g.id" class="relative rounded-2xl overflow-hidden aspect-4/3">
-          <img :src="g.url" :alt="g.title || 'Realizacja Radec24'" class="w-full h-full object-cover" width="420" height="315" loading="lazy">
+        <button
+          v-for="(g, index) in filtered"
+          :key="g.id"
+          type="button"
+          class="relative rounded-2xl overflow-hidden aspect-4/3 cursor-zoom-in border-none p-0 group"
+          @click="lightboxIndex = index"
+        >
+          <img :src="g.url" :alt="g.title || 'Realizacja Radec24'" class="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105" width="420" height="315" loading="lazy">
           <div v-if="g.category" class="absolute left-3.5 top-3.5 bg-(--color-ink)/80 text-white px-3 py-1.5 rounded-lg text-[11.5px] font-semibold">{{ g.category }}</div>
           <div v-if="g.location" class="absolute left-3.5 bottom-3.5 bg-white/92 px-3 py-1.5 rounded-lg text-[12.5px] font-semibold text-(--color-ink)">{{ g.location }}</div>
-        </div>
+        </button>
       </div>
       <div v-else class="text-center py-20 text-(--color-ink-3)">
         <p class="text-lg">Galeria realizacji jest w przygotowaniu.</p>
@@ -67,5 +81,7 @@ const filtered = computed(() => activeFilter.value === 'Wszystkie'
         <NuxtLink to="/kontakt" class="btn-dark text-base px-7.5 py-4">Umów bezpłatny pomiar</NuxtLink>
       </div>
     </section>
+
+    <UiLightbox :images="lightboxImages" :index="lightboxIndex" @close="lightboxIndex = null" @update:index="lightboxIndex = $event" />
   </div>
 </template>
