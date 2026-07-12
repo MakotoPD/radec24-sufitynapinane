@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useSeoMeta({
+usePageSeo({
   title: 'Czym jest sufit napinany?',
   description: 'Dowiedz się czym jest sufit napinany, jak wygląda montaż krok po kroku i czym różni się od tradycyjnego sufitu tynkowanego.'
 })
@@ -49,7 +49,7 @@ const comparison = [
       <h2 class="text-2xl sm:text-[28px] font-bold text-(--color-ink) mb-5">Jak wygląda montaż krok po kroku</h2>
       <div class="flex flex-col">
         <div v-for="step in steps" :key="step.num" class="grid grid-cols-[44px_1fr] gap-5 py-5.5 border-t border-(--color-border)">
-          <div class="w-9 h-9 rounded-full bg-(--color-accent-light) text-(--color-accent) font-display font-bold text-[15px] flex items-center justify-center">{{ step.num }}</div>
+          <div class="w-9 h-9 rounded-full bg-(--color-accent-light) text-(--color-accent-dark) font-display font-bold text-[15px] flex items-center justify-center">{{ step.num }}</div>
           <div>
             <div class="text-[16.5px] font-semibold text-(--color-ink) mb-1.5">{{ step.title }}</div>
             <div class="text-[15px] leading-relaxed text-(--color-ink-3)">{{ step.desc }}</div>

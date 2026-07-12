@@ -26,11 +26,11 @@ function formatDate(value: string) {
       <table class="w-full text-sm min-w-150">
         <thead>
           <tr class="border-b border-(--color-border) text-left text-(--color-ink-3)">
-            <th class="px-4 py-3 font-semibold">Data</th>
-            <th class="px-4 py-3 font-semibold">Użytkownik</th>
-            <th class="px-4 py-3 font-semibold">Status</th>
-            <th class="px-4 py-3 font-semibold">IP</th>
-            <th class="px-4 py-3 font-semibold">User agent</th>
+            <th scope="col" class="px-4 py-3 font-semibold">Data</th>
+            <th scope="col" class="px-4 py-3 font-semibold">Użytkownik</th>
+            <th scope="col" class="px-4 py-3 font-semibold">Status</th>
+            <th scope="col" class="px-4 py-3 font-semibold">IP</th>
+            <th scope="col" class="px-4 py-3 font-semibold">User agent</th>
           </tr>
         </thead>
         <tbody>
@@ -38,7 +38,7 @@ function formatDate(value: string) {
             <td class="px-4 py-3 whitespace-nowrap">{{ formatDate(log.createdAt) }}</td>
             <td class="px-4 py-3 font-medium text-(--color-ink)">{{ log.username }}</td>
             <td class="px-4 py-3">
-              <span :class="log.success ? 'text-(--color-success)' : 'text-(--color-accent)'" class="font-semibold">
+              <span :class="log.success ? 'text-(--color-success)' : 'text-(--color-accent-dark)'" class="font-semibold">
                 {{ log.success ? 'Sukces' : 'Nieudana próba' }}
               </span>
             </td>

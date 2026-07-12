@@ -13,6 +13,17 @@ const errors = reactive<Record<string, string>>({})
 const submitted = ref(false)
 const submitting = ref(false)
 const serverError = ref('')
+const successHeading = ref<HTMLElement | null>(null)
+
+const uid = useId()
+const ids = {
+  name: `${uid}-name`,
+  phone: `${uid}-phone`,
+  email: `${uid}-email`,
+  city: `${uid}-city`,
+  message: `${uid}-message`,
+  rodo: `${uid}-rodo`
+}
 
 function clearError(key: string) {
   delete errors[key]
@@ -36,6 +47,8 @@ async function onSubmit() {
   try {
     await $fetch('/api/contact', { method: 'POST', body: form })
     submitted.value = true
+    await nextTick()
+    successHeading.value?.focus()
   } catch {
     serverError.value = 'Nie udało się wysłać wiadomości. Spróbuj ponownie lub zadzwoń bezpośrednio.'
   } finally {
@@ -55,39 +68,87 @@ function fieldClass(key: string) {
     <div v-if="!submitted">
       <h2 class="text-[22px] font-bold text-(--color-ink) mb-1.5">Wyślij zapytanie</h2>
       <p class="text-sm text-(--color-ink-3) mb-6">Odpowiadam w ciągu jednego dnia roboczego.</p>
-      <form class="flex flex-col gap-5" @submit.prevent="onSubmit">
+      <form class="flex flex-col gap-5" novalidate @submit.prevent="onSubmit">
         <div class="grid grid-cols-1 sm:grid-cols-2 gap-4.5">
           <div>
-            <label class="text-[13.5px] font-semibold text-(--color-ink) block mb-2">Imię i nazwisko</label>
-            <input v-model="form.name" type="text" placeholder="Jan Kowalski" :class="fieldClass('name')" @input="clearError('name')">
-            <div v-if="errors.name" class="text-(--color-accent) text-[12.5px] mt-1.5">{{ errors.name }}</div>
+            <label :for="ids.name" class="text-[13.5px] font-semibold text-(--color-ink) block mb-2">Imię i nazwisko</label>
+            <input
+              :id="ids.name"
+              v-model="form.name"
+              type="text"
+              placeholder="Jan Kowalski"
+              :class="fieldClass('name')"
+              :aria-invalid="!!errors.name"
+              :aria-describedby="errors.name ? `${ids.name}-error` : undefined"
+              @input="clearError('name')"
+            >
+            <div v-if="errors.name" :id="`${ids.name}-error`" role="alert" class="text-(--color-accent-dark) text-[12.5px] mt-1.5">{{ errors.name }}</div>
           </div>
           <div>
-            <label class="text-[13.5px] font-semibold text-(--color-ink) block mb-2">Telefon</label>
-            <input v-model="form.phone" type="text" placeholder="600 000 000" :class="fieldClass('phone')" @input="clearError('phone')">
-            <div v-if="errors.phone" class="text-(--color-accent) text-[12.5px] mt-1.5">{{ errors.phone }}</div>
+            <label :for="ids.phone" class="text-[13.5px] font-semibold text-(--color-ink) block mb-2">Telefon</label>
+            <input
+              :id="ids.phone"
+              v-model="form.phone"
+              type="tel"
+              autocomplete="tel"
+              placeholder="600 000 000"
+              :class="fieldClass('phone')"
+              :aria-invalid="!!errors.phone"
+              :aria-describedby="errors.phone ? `${ids.phone}-error` : undefined"
+              @input="clearError('phone')"
+            >
+            <div v-if="errors.phone" :id="`${ids.phone}-error`" role="alert" class="text-(--color-accent-dark) text-[12.5px] mt-1.5">{{ errors.phone }}</div>
           </div>
         </div>
         <div>
-          <label class="text-[13.5px] font-semibold text-(--color-ink) block mb-2">E-mail</label>
-          <input v-model="form.email" type="text" placeholder="jan@przyklad.pl" :class="fieldClass('email')" @input="clearError('email')">
-          <div v-if="errors.email" class="text-(--color-accent) text-[12.5px] mt-1.5">{{ errors.email }}</div>
+          <label :for="ids.email" class="text-[13.5px] font-semibold text-(--color-ink) block mb-2">E-mail</label>
+          <input
+            :id="ids.email"
+            v-model="form.email"
+            type="email"
+            autocomplete="email"
+            placeholder="jan@przyklad.pl"
+            :class="fieldClass('email')"
+            :aria-invalid="!!errors.email"
+            :aria-describedby="errors.email ? `${ids.email}-error` : undefined"
+            @input="clearError('email')"
+          >
+          <div v-if="errors.email" :id="`${ids.email}-error`" role="alert" class="text-(--color-accent-dark) text-[12.5px] mt-1.5">{{ errors.email }}</div>
         </div>
         <div>
-          <label class="text-[13.5px] font-semibold text-(--color-ink) block mb-2">Miejscowość</label>
-          <input v-model="form.city" type="text" placeholder="np. Inowrocław" :class="fieldClass('city')">
+          <label :for="ids.city" class="text-[13.5px] font-semibold text-(--color-ink) block mb-2">Miejscowość</label>
+          <input :id="ids.city" v-model="form.city" type="text" autocomplete="address-level2" placeholder="np. Inowrocław" :class="fieldClass('city')">
         </div>
         <div>
-          <label class="text-[13.5px] font-semibold text-(--color-ink) block mb-2">Wiadomość</label>
-          <textarea v-model="form.message" rows="4" placeholder="Opisz krótko czego dotyczy zapytanie (metraż, rodzaj pomieszczenia, termin)" :class="fieldClass('message')" @input="clearError('message')" />
-          <div v-if="errors.message" class="text-(--color-accent) text-[12.5px] mt-1.5">{{ errors.message }}</div>
+          <label :for="ids.message" class="text-[13.5px] font-semibold text-(--color-ink) block mb-2">Wiadomość</label>
+          <textarea
+            :id="ids.message"
+            v-model="form.message"
+            rows="4"
+            placeholder="Opisz krótko czego dotyczy zapytanie (metraż, rodzaj pomieszczenia, termin)"
+            :class="fieldClass('message')"
+            :aria-invalid="!!errors.message"
+            :aria-describedby="errors.message ? `${ids.message}-error` : undefined"
+            @input="clearError('message')"
+          />
+          <div v-if="errors.message" :id="`${ids.message}-error`" role="alert" class="text-(--color-accent-dark) text-[12.5px] mt-1.5">{{ errors.message }}</div>
         </div>
-        <label class="flex items-start gap-2.5 cursor-pointer">
-          <input v-model="form.rodo" type="checkbox" class="mt-0.5 accent-(--color-accent) w-4 h-4 flex-none" @change="clearError('rodo')">
-          <span class="text-[13px] leading-relaxed text-(--color-ink-3)">Wyrażam zgodę na przetwarzanie danych osobowych w celu obsługi zapytania (RODO).</span>
-        </label>
-        <div v-if="errors.rodo" class="text-(--color-accent) text-[12.5px] -mt-3">{{ errors.rodo }}</div>
-        <div v-if="serverError" class="text-(--color-accent) text-sm">{{ serverError }}</div>
+        <div>
+          <label :for="ids.rodo" class="flex items-start gap-2.5 cursor-pointer">
+            <input
+              :id="ids.rodo"
+              v-model="form.rodo"
+              type="checkbox"
+              class="mt-0.5 accent-(--color-accent) w-4 h-4 flex-none"
+              :aria-invalid="!!errors.rodo"
+              :aria-describedby="errors.rodo ? `${ids.rodo}-error` : undefined"
+              @change="clearError('rodo')"
+            >
+            <span class="text-[13px] leading-relaxed text-(--color-ink-3)">Wyrażam zgodę na przetwarzanie danych osobowych w celu obsługi zapytania (RODO).</span>
+          </label>
+          <div v-if="errors.rodo" :id="`${ids.rodo}-error`" role="alert" class="text-(--color-accent-dark) text-[12.5px] mt-1.5">{{ errors.rodo }}</div>
+        </div>
+        <div v-if="serverError" role="alert" class="text-(--color-accent-dark) text-sm">{{ serverError }}</div>
         <button type="submit" class="btn-accent text-base py-4 mt-1 disabled:opacity-60" :disabled="submitting">
           {{ submitting ? 'Wysyłanie…' : 'Wyślij zapytanie' }}
         </button>
@@ -95,9 +156,9 @@ function fieldClass(key: string) {
     </div>
     <div v-else class="text-center py-10 px-2.5">
       <div class="w-15 h-15 rounded-full bg-(--color-success-light) flex items-center justify-center mx-auto mb-5.5">
-        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2C7A4B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="#2C7A4B" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" /></svg>
       </div>
-      <h2 class="text-[22px] font-bold text-(--color-ink) mb-2.5">Dziękuję, {{ form.name }}!</h2>
+      <h2 ref="successHeading" tabindex="-1" class="text-[22px] font-bold text-(--color-ink) mb-2.5 outline-none">Dziękuję, {{ form.name }}!</h2>
       <p class="text-[15px] leading-relaxed text-(--color-ink-3) max-w-90 mx-auto">
         Twoje zapytanie zostało wysłane. Skontaktuję się pod numerem {{ form.phone }} w ciągu jednego dnia roboczego.
       </p>

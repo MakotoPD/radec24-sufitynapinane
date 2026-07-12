@@ -16,6 +16,9 @@ const emit = defineEmits<{
 }>()
 
 const current = computed(() => (props.index !== null ? props.images[props.index] : null))
+const dialogEl = ref<HTMLElement | null>(null)
+const closeBtn = ref<HTMLElement | null>(null)
+let previouslyFocused: HTMLElement | null = null
 
 function next() {
   if (props.index === null) return
@@ -27,16 +30,41 @@ function prev() {
   emit('update:index', (props.index - 1 + props.images.length) % props.images.length)
 }
 
-function onKeydown(e: KeyboardEvent) {
-  if (props.index === null) return
-  if (e.key === 'Escape') emit('close')
-  if (e.key === 'ArrowRight') next()
-  if (e.key === 'ArrowLeft') prev()
+function trapFocus(e: KeyboardEvent) {
+  if (!dialogEl.value) return
+  const focusables = dialogEl.value.querySelectorAll<HTMLElement>('button, [href]')
+  if (focusables.length === 0) return
+  const first = focusables[0]!
+  const last = focusables[focusables.length - 1]!
+  if (e.shiftKey && document.activeElement === first) {
+    e.preventDefault()
+    last.focus()
+  } else if (!e.shiftKey && document.activeElement === last) {
+    e.preventDefault()
+    first.focus()
+  }
 }
 
-watch(() => props.index, (val) => {
+function onKeydown(e: KeyboardEvent) {
+  if (props.index === null) return
+  if (e.key === 'Escape') { emit('close'); return }
+  if (e.key === 'ArrowRight') { next(); return }
+  if (e.key === 'ArrowLeft') { prev(); return }
+  if (e.key === 'Tab') trapFocus(e)
+}
+
+watch(() => props.index, async (val, oldVal) => {
   if (typeof document === 'undefined') return
   document.body.style.overflow = val !== null ? 'hidden' : ''
+
+  if (val !== null && oldVal === null) {
+    previouslyFocused = document.activeElement as HTMLElement
+    await nextTick()
+    closeBtn.value?.focus()
+  } else if (val === null && oldVal !== null) {
+    previouslyFocused?.focus()
+    previouslyFocused = null
+  }
 })
 
 onMounted(() => window.addEventListener('keydown', onKeydown))
@@ -50,17 +78,20 @@ onUnmounted(() => {
   <Teleport to="body">
     <div
       v-if="current"
+      ref="dialogEl"
       class="fixed inset-0 z-999 bg-(--color-ink)/92 flex items-center justify-center p-4 sm:p-8"
       role="dialog"
       aria-modal="true"
+      :aria-label="`Podgląd zdjęcia ${(index ?? 0) + 1} z ${images.length}`"
       @click.self="emit('close')"
     >
       <button
+        ref="closeBtn"
         class="absolute top-4 right-4 sm:top-6 sm:right-6 w-11 h-11 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white transition-colors cursor-pointer border-none"
-        aria-label="Zamknij"
+        aria-label="Zamknij podgląd"
         @click="emit('close')"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round" /></svg>
       </button>
 
       <button
@@ -69,7 +100,7 @@ onUnmounted(() => {
         aria-label="Poprzednie zdjęcie"
         @click.stop="prev"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M15 6l-6 6 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
       </button>
       <button
         v-if="images.length > 1"
@@ -77,7 +108,7 @@ onUnmounted(() => {
         aria-label="Następne zdjęcie"
         @click.stop="next"
       >
-        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M9 6l6 6-6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" /></svg>
       </button>
 
       <figure class="max-w-5xl w-full max-h-full flex flex-col items-center" @click.stop>

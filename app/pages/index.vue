@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { cities } from '#shared/utils/cities'
 
-useSeoMeta({
+usePageSeo({
   title: 'Sufity napinane Inowrocław i region kujawsko-pomorski',
   description: 'Montaż sufitów napinanych w Inowrocławiu, Janikowie i regionie kujawsko-pomorskim. Bez kucia, bez pyłu — gładki sufit montowany w jeden dzień. Bezpłatny pomiar i wycena.'
 })
@@ -56,7 +56,7 @@ const { data: gallery } = await useFetch('/api/gallery', { query: { limit: 6 } }
       <div class="relative">
         <div class="absolute -top-7 -right-7 w-[88%] h-[88%] bg-(--color-accent) rounded-3xl rotate-3 z-0" />
         <div class="relative z-10 rounded-3xl overflow-hidden aspect-4/5 border border-(--color-border)">
-          <NuxtImg src="/img/sufit.png" alt="Zrealizowany sufit napinany z podświetleniem LED" class="w-full h-full object-cover" width="554" height="696" />
+          <NuxtImg src="/img/sufit.png" alt="Zrealizowany sufit napinany z podświetleniem LED" class="w-full h-full object-cover" width="554" height="696" preload fetchpriority="high" />
         </div>
         <div class="absolute -bottom-6 -left-7 z-20 bg-(--color-dark) text-white px-6 py-5 rounded-[18px] shadow-2xl max-w-55">
           <div class="text-[13px] text-(--color-ink-4) mb-1">Montaż w</div>
@@ -178,7 +178,7 @@ const { data: gallery } = await useFetch('/api/gallery', { query: { limit: 6 } }
           </div>
         </div>
         <div class="relative aspect-square">
-          <svg viewBox="0 0 400 400" class="w-full h-full">
+          <svg aria-hidden="true" viewBox="0 0 400 400" class="w-full h-full">
             <path d="M120 40 L280 55 L340 140 L360 230 L300 320 L200 360 L100 330 L50 250 L45 150 L80 80 Z" fill="#fff" stroke="#E8E1D9" stroke-width="2" />
             <circle cx="180" cy="180" r="7" fill="#E3423A" />
             <circle cx="240" cy="140" r="5" fill="#E3423A" opacity="0.7" />

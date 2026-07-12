@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useSeoMeta({
+usePageSeo({
   title: 'Konserwacja sufitu napinanego',
   description: 'Jak dbać o sufit napinany — zalecenia dotyczące czyszczenia, czego unikać oraz odpowiedzi na najczęstsze pytania o konserwację.'
 })
@@ -51,9 +51,9 @@ const faqs = [
       <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div class="card p-7.5">
           <div class="w-11 h-11 rounded-xl bg-(--color-success-light) flex items-center justify-center mb-4.5">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2C7A4B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 13l4 4L19 7" stroke="#2C7A4B" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" /></svg>
           </div>
-          <h3 class="text-[17px] font-semibold text-(--color-ink) mb-3.5">Zalecane</h3>
+          <h2 class="text-[17px] font-semibold text-(--color-ink) mb-3.5">Zalecane</h2>
           <div class="flex flex-col gap-2.5">
             <div v-for="d in doList" :key="d" class="flex gap-2.5 text-[14.5px] leading-relaxed text-(--color-ink-2)">
               <span class="text-(--color-success) flex-none">✓</span>{{ d }}
@@ -62,9 +62,9 @@ const faqs = [
         </div>
         <div class="card p-7.5">
           <div class="w-11 h-11 rounded-xl bg-(--color-accent-light) flex items-center justify-center mb-4.5">
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#E3423A" stroke-width="2.2" stroke-linecap="round" /></svg>
+            <svg aria-hidden="true" width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M6 6l12 12M18 6L6 18" stroke="#E3423A" stroke-width="2.2" stroke-linecap="round" /></svg>
           </div>
-          <h3 class="text-[17px] font-semibold text-(--color-ink) mb-3.5">Czego unikać</h3>
+          <h2 class="text-[17px] font-semibold text-(--color-ink) mb-3.5">Czego unikać</h2>
           <div class="flex flex-col gap-2.5">
             <div v-for="d in dontList" :key="d" class="flex gap-2.5 text-[14.5px] leading-relaxed text-(--color-ink-2)">
               <span class="text-(--color-accent) flex-none">✕</span>{{ d }}

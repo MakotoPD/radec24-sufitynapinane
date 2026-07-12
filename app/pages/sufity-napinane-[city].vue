@@ -13,9 +13,10 @@ const { companyInfo } = useCompanyInfo()
 const { services, processSteps } = useSiteContent()
 const site = useSiteConfig()
 
-useSeoMeta({
+usePageSeo({
   title: `Sufity napinane ${city.name}`,
-  description: `Montaż sufitów napinanych ${city.locative} i okolicy. Bezpłatny pomiar i wycena, montaż bez kucia i bałaganu — zwykle w jeden dzień. Zadzwoń: ${companyInfo.phoneDisplay}.`
+  description: `Montaż sufitów napinanych ${city.locative} i okolicy. Bezpłatny pomiar i wycena, montaż bez kucia i bałaganu — zwykle w jeden dzień. Zadzwoń: ${companyInfo.phoneDisplay}.`,
+  ogBadge: city.name
 })
 
 useHead({

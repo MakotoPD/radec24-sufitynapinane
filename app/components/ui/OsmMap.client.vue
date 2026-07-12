@@ -45,5 +45,5 @@ onMounted(async () => {
 </script>
 
 <template>
-  <div ref="mapEl" class="w-full h-full rounded-[22px] overflow-hidden border border-(--color-border)" />
+  <div ref="mapEl" role="application" aria-label="Mapa lokalizacji Radec24 — Ludzisko 56, Janikowo" class="w-full h-full rounded-[22px] overflow-hidden border border-(--color-border)" />
 </template>

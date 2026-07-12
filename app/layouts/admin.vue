@@ -15,6 +15,7 @@ const navItems = [
 
 <template>
   <div class="min-h-screen bg-(--color-bg)">
+    <a href="#main-content" class="skip-link">Przejdź do treści</a>
     <header class="border-b border-(--color-border) bg-white">
       <div class="container-page flex items-center justify-between py-4 gap-4 flex-wrap">
         <div class="flex items-center gap-8">
@@ -37,7 +38,7 @@ const navItems = [
         </div>
       </div>
     </header>
-    <main class="container-page py-10">
+    <main id="main-content" tabindex="-1" class="container-page py-10">
       <slot />
     </main>
   </div>

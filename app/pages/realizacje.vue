@@ -1,5 +1,5 @@
 <script setup lang="ts">
-useSeoMeta({
+usePageSeo({
   title: 'Realizacje',
   description: 'Galeria zrealizowanych sufitów napinanych w Inowrocławiu, Janikowie i regionie kujawsko-pomorskim.'
 })

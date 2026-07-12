@@ -8,6 +8,10 @@ const password = ref('')
 const error = ref('')
 const loading = ref(false)
 
+const uid = useId()
+const usernameId = `${uid}-username`
+const passwordId = `${uid}-password`
+
 if (loggedIn.value) {
   await navigateTo('/admin')
 }
@@ -30,16 +34,16 @@ async function onSubmit() {
 <template>
   <div class="max-w-sm mx-auto py-10">
     <h1 class="text-2xl font-bold text-(--color-ink) mb-6">Logowanie do panelu</h1>
-    <form class="flex flex-col gap-4" @submit.prevent="onSubmit">
+    <form class="flex flex-col gap-4" novalidate @submit.prevent="onSubmit">
       <div>
-        <label class="text-sm font-semibold text-(--color-ink) block mb-1.5">Login</label>
-        <input v-model="username" type="text" autocomplete="username" class="w-full px-3.5 py-2.5 rounded-[10px] border border-(--color-border) text-sm focus:outline-none focus:border-(--color-accent)" required>
+        <label :for="usernameId" class="text-sm font-semibold text-(--color-ink) block mb-1.5">Login</label>
+        <input :id="usernameId" v-model="username" type="text" autocomplete="username" class="w-full px-3.5 py-2.5 rounded-[10px] border border-(--color-border) text-sm focus:outline-none focus:border-(--color-accent)" required>
       </div>
       <div>
-        <label class="text-sm font-semibold text-(--color-ink) block mb-1.5">Hasło</label>
-        <input v-model="password" type="password" autocomplete="current-password" class="w-full px-3.5 py-2.5 rounded-[10px] border border-(--color-border) text-sm focus:outline-none focus:border-(--color-accent)" required>
+        <label :for="passwordId" class="text-sm font-semibold text-(--color-ink) block mb-1.5">Hasło</label>
+        <input :id="passwordId" v-model="password" type="password" autocomplete="current-password" class="w-full px-3.5 py-2.5 rounded-[10px] border border-(--color-border) text-sm focus:outline-none focus:border-(--color-accent)" required>
       </div>
-      <div v-if="error" class="text-(--color-accent) text-sm">{{ error }}</div>
+      <div v-if="error" role="alert" class="text-(--color-accent-dark) text-sm">{{ error }}</div>
       <button type="submit" class="btn-accent py-3 text-sm disabled:opacity-60" :disabled="loading">
         {{ loading ? 'Logowanie…' : 'Zaloguj się' }}
       </button>

@@ -3,7 +3,7 @@ defineProps<{ icon: 'rect' | 'print' | 'circle' | 'bars' | 'levels' | 'star' }>(
 </script>
 
 <template>
-  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E3423A" stroke-width="1.6">
+  <svg aria-hidden="true" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#E3423A" stroke-width="1.6">
     <rect v-if="icon === 'rect'" x="3" y="5" width="18" height="14" rx="2" />
     <path v-else-if="icon === 'print'" d="M4 17l4-5 3 3 5-6 4 8" fill="none" />
     <circle v-else-if="icon === 'circle'" cx="12" cy="12" r="4" />
